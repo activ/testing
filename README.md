@@ -17,8 +17,7 @@ Latest stable Privoxy release from Arch Linux repo.
 ```
 docker run -d \
     --cap-add=NET_ADMIN \
-    -p 9080:9080 \
-    -p 9443:9443 \
+    -p 9091:9091 \
     -p 8118:8118 \
     --name=<container name> \
     -v <path for data files>:/data \
@@ -46,16 +45,10 @@ docker run -d \
 
 Please replace all user variables in the above command defined by <> with the correct values.
 
-**Access ruTorrent (web ui)**
+**Access transmission (web ui)**
 
-`http://<host ip>:9080/`
+`http://<host ip>:9091/`
 
-or
-
-`https://<host ip>:9443/`
-
-Username:- admin
-Password:- rutorrent
 
 **Access Privoxy**
 
@@ -79,7 +72,7 @@ file by using the following link https://airvpn.org/generator/
 ```
 docker run -d \
     --cap-add=NET_ADMIN \
-	-p 8112:8112 \
+	-p 9091:9091 \
 	-p 8118:8118 \
     --name=transmissionvpn \
     -v /root/docker/data:/data \
@@ -112,10 +105,6 @@ User ID (PUID) and Group ID (PGID) can be found by issuing the following command
 id <username>
 ```
 
-The STRONG_CERTS environment variable is used to define whether to use strong certificates and enhanced encryption ciphers when connecting to PIA (does not affect other providers).
-___
-If you appreciate my work, then please consider buying me a beer  :D
 
-[![PayPal donation](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MM5E27UX6AUU4)
 
 [Support forum](http://lime-technology.com/forum/index.php?topic=47832.0)
